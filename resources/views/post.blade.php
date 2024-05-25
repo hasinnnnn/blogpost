@@ -5,7 +5,8 @@
             {{ $post['title'] }}
         </h2>
         <div class="link-hover">
-            <a href="" class="text-decoration-none text-reset">{{ $post['author'] }}</a> |
+            <a href="/authors/{{ $post->author->id }}" class="">{{ $post->author->name }}</a>
+            |
             {{ $post->created_at->diffForHumans() }}
         </div>
         <p class="my-4 ">

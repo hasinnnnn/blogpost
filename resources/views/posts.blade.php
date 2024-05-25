@@ -7,7 +7,8 @@
                 <a href="/posts/{{ $p['slug'] }}" class="text-decoration-none text-reset">{{ $p['title'] }}</a>
             </h2>
             <div class="link-hover">
-                <a href="" class="text-decoration-none text-reset">{{ $p['author'] }}</a> |
+                <a href="/authors/{{ $p->author->id }}" class="">{{ $p->author->name }}</a>
+                |
                 {{ $p->created_at->diffForHumans() }}
             </div>
             <p class="my-4 ">
