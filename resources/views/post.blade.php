@@ -5,13 +5,17 @@
             {{ $post['title'] }}
         </h2>
         <div class="link-hover">
-            <a href="/authors/{{ $post->author->id }}" class="">{{ $post->author->name }}</a>
+            By
+            <a href="/authors/{{ $post->author->username }}" class="">{{ $post->author->name }}</a>
+            in
+            <a href="/categories/{{ $post->category->slug }}" class="">{{ $post->category->name }}</a>
+
             |
             {{ $post->created_at->diffForHumans() }}
         </div>
         <p class="my-4 ">
             {{ $post['body'] }}
         </p>
-        <a href="/posts" class="text-decoration-none">&laquo Back To Post</a>
+        <a href="/posts" class="text-decoration-none">&laquo Back To Posts</a>
     </article>
 </x-layout>
