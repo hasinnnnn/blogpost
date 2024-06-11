@@ -9,7 +9,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
 });
-Route::view('/posts', 'posts', ['title' => 'Blog Post', 'posts' => Post::all()]);
+Route::get('/posts', function () {
+    $posts = Post::latest()->get();
+
+    return view('posts', [
+        'title' => 'Blog Post',
+        'posts' => $posts,
+    ]);
+});
+
 Route::get('/posts/{post:slug}', function (Post $post) {
     return view('post', ['title' => $post->slug, 'post' => $post]);
 });

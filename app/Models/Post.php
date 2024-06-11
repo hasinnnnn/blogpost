@@ -19,6 +19,7 @@ class Post extends Model
         'slug',
         'body',
     ];
+    protected $with = ['author', 'category'];
 
     public function author(): BelongsTo
     {
