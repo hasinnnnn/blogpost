@@ -34,12 +34,12 @@ URL: https://flowbite.com/docs/components/typography/
                             <img class="mr-4 w-16 h-16 rounded-full"
                                 src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos">
                             <div>
-                                <a href="/authors/{{ $post->author->username }}" rel="author"
+                                <a href="/posts?author={{ $post->author->username }}" rel="author"
                                     class="text-xl font-bold text-gray-900 dark:text-white no-underline hover:underline">{{ $post->author->name }}</a>
                                 <span class="text-base text-gray-500 dark:text-gray-400 ml-2">
                                     | {{ $post->created_at->diffForHumans() }}</span>
                                 <p>
-                                    <a href="/categories/{{ $post->category->slug }}"
+                                    <a href="/posts?category={{ $post->category->slug }}"
                                         class="bg-{{ $post->category->color }}-100 text-base text-gray-500 dark:text-gray-400 no-underline hover:underline">{{ $post->category->name }}</a>
                                 </p>
                             </div>

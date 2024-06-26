@@ -9,7 +9,7 @@
         <title>Punya Hasin</title>
     </head>
 
-    <body>
+    <body class="bg-gray-600">
         <x-navbar></x-navbar>
         <x-header>{{ $title }}</x-header>
         <main>

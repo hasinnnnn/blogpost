@@ -10,11 +10,9 @@ Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
 });
 Route::get('/posts', function () {
-    $posts = Post::latest()->get();
-
     return view('posts', [
         'title' => 'Blog Post',
-        'posts' => $posts,
+        'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get()
     ]);
 });
 
